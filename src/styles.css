@@ -11,3 +11,278 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+a, p {
+  font-size: 1.125rem;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 32px;
+  display: inline-block;
+}
+
+.secondary-link {
+  color: var(--white);
+  border-bottom: 3px solid var(--green);
+}
+
+.secondary-link:hover,
+.secondary-link:focus {
+  color: var(--green);
+}
+
+.primary-link {
+  color: var(--dark-purple);
+  padding: 0.8rem 1.56rem;
+  background-color: var(--green);
+  border: 2px solid var(--green) ;
+}
+
+.primary-link:hover,
+.primary-link:focus {
+  color: var(--green);
+  background-color: var(--dark-purple);
+}
+ 
+main {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/********* Initial header ***********/
+
+header {
+  position: relative;
+  background-image: url('./assets/images/header-bg.svg');
+  background-position: bottom;
+  background-size: cover;
+  height: 45rem;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.header-content {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 3.5rem 1rem 0;
+  text-align: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
+  color: var(--white);
+  font-size: 5rem;
+  margin: 3.9rem 0 2.3rem;
+}
+
+.header-content h1 span {
+  border-bottom: 3px solid var(--green);
+}
+
+.bg-decoration-left,
+.bg-decoration-right {
+  position: absolute;
+  
+}
+
+.bg-decoration-left {
+  top: 7.25rem;
+  left: -8.6rem;
+}
+
+.bg-decoration-right {
+  top: 19rem;
+  right: -3rem;
+}
+
+
+/********* Final header ***********/
+/********* Initial big cellphone image ***********/
+
+.big-phone {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: -15.5rem auto 0rem;
+}
+
+.big-phone img {
+  width: 43.8rem;
+  height: 26.5rem;
+}
+
+/********* Final big cellphone image ***********/
+
+/********* Initial content ***********/
+
+.content {
+  /* margin-top: 5.6rem;
+  margin-bottom: 17rem; */
+  margin: 5.6rem auto 17rem;
+  display: flex;
+  gap: 1.6rem;
+  color: var(--dark-purple);
+  text-align: center;
+}
+
+.content-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-cell p {
+  font-weight: 400;
+}
+
+.content-cell span {
+  border: 1px solid var(--light-purple);
+  border-radius: 100%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 3.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.content-cell h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.content-cell p {  
+  line-height: 1.5rem;
+}
+
+
+/********* Final content ***********/
+
+/* Tablet Break Point */
+@media (max-width: 768px) {
+  header {
+    height: 33.75rem;
+  }
+
+  .header-content {
+    padding: 2.5rem 2.5rem 0;
+  }
+
+  .header-content h1 {
+    font-size: 3.75rem;
+    margin: 3.5 0 2.3rem;
+  }
+
+  .big-phone {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: -8.25rem auto 0rem;
+  }
+
+  .big-phone img {
+    width: 30rem;
+    height: 18rem;
+  }
+
+  .bg-decoration-left {
+    top: 4.4rem;
+    left: -14.2rem;
+  }
+  
+  .bg-decoration-right {
+    top: 15.6rem;
+    right: -5.8rem;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 0 5.1rem;
+    text-align: left;
+  }
+
+  .content-cell {
+    flex-direction: row;
+  }
+
+  .content-cell h2 {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .content-cell span {
+    margin-right: 2rem;
+  }
+
+}
+
+@media (max-width: 580px) {
+  .content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width:517px) {
+  header {
+    height: 30rem;
+  }
+
+  .header-content {
+    padding: 2rem 1rem 0;
+  }
+
+  .header-content h1 {
+    font-size: 3.1rem;
+    margin: 4rem 0 2.5rem;
+  }
+
+  .big-phone {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: -5.6rem auto 0rem;
+  }
+
+  .big-phone img {
+    width: 18rem;
+    height: 11.2rem;
+  }
+
+  .bg-decoration-left,
+  .bg-decoration-right {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .content-cell {
+    flex-direction: column;
+  }
+
+  .content-cell h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-cell span {
+    margin-right: 0rem;
+  }
+}
