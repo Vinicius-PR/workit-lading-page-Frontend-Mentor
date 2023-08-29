@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'fraunces';
+  src: url('./assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf') format('TrueType'),
+       url('./assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf') format('TrueType');
+} 
+
+@font-face {
+  font-family: 'manrope';
+  src: url('./assets/fonts/manrope/static/Manrope-Regular.ttf') format('TrueType'),
+       url('./assets/fonts/manrope/Manrope-VariableFont_wght.ttf') format('TrueType');
+} 
+
 :root {
   --dark-purple: #24053E;
   --green: #44FFA1;
@@ -12,15 +24,23 @@
   box-sizing: border-box;
 }
 
+h1, h2, h4, h5, h6 {
+  font-family: 'fraunces';
+}
+
+p, a, button {
+  font-family: 'manrope';
+}
+
 a, p {
   font-size: 1.125rem;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none; 
   font-weight: bold;
   line-height: 32px;
-  display: inline-block;
+  z-index: 1;
 }
 
 .secondary-link {
@@ -38,6 +58,7 @@ a {
   padding: 0.8rem 1.56rem;
   background-color: var(--green);
   border: 2px solid var(--green) ;
+  width: max-content;
 }
 
 .primary-link:hover,
@@ -61,7 +82,6 @@ header {
   background-size: cover;
   height: 45rem;
   overflow: hidden;
-  z-index: -1;
 }
 
 .header-content {
@@ -112,6 +132,9 @@ header {
   justify-content: center;
   align-items: flex-end;
   margin: -15.5rem auto 0rem;
+  z-index: 1;
+  position: relative; 
+  /*Did the position relative so z-index will work. If static, doesn't work */
 }
 
 .big-phone img {
@@ -120,12 +143,9 @@ header {
 }
 
 /********* Final big cellphone image ***********/
-
 /********* Initial content ***********/
 
 .content {
-  /* margin-top: 5.6rem;
-  margin-bottom: 17rem; */
   margin: 5.6rem auto 17rem;
   display: flex;
   gap: 1.6rem;
@@ -169,8 +189,63 @@ header {
 
 
 /********* Final content ***********/
+/********* Initial presentation ***********/
 
-/* Tablet Break Point */
+.presentation {
+  display: flex;
+  margin-bottom: 7.6rem;
+}
+
+.presentation > img {
+  width: 30rem;
+  height: 30rem;
+  margin-right: -6rem;
+  margin-top: -6.8rem;
+}
+
+.presentation div {
+  background-color: var(--dark-purple);
+  color: var(--white);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.presentation div h1 {
+  font-size: 3.5rem;
+}
+
+.presentation div p {
+  line-height: 32px;
+}
+
+.bg-decoration-presentation {
+  position: absolute;
+  bottom: -4rem;
+  right: 4.6rem;
+}
+
+/********* Final presentation ***********/
+/********* Initial footer ***********/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.6rem;
+  margin-bottom: 6.8rem;
+}
+
+footer div {
+  display: flex;
+  gap: 1.75rem;
+}
+
+/********* Final footer ***********/
+
+
 @media (max-width: 768px) {
   header {
     height: 33.75rem;
@@ -227,6 +302,35 @@ header {
     margin-right: 2rem;
   }
 
+  .presentation {
+    margin-bottom: 5rem;
+  }
+  
+  .presentation > img {
+    width: 17.5rem;
+    height: 17.5rem;
+    margin-right: -6.6rem;
+    margin-top: -8.1rem;
+  }
+  
+  .presentation div {
+    padding: 3rem 3.5rem 3.5rem;
+    gap: 1.5rem;
+  }
+  
+  .presentation div h1 {
+    font-size: 3rem;
+  }
+  
+  .presentation div p {
+    line-height: 28px;
+  }
+  
+  .bg-decoration-presentation {
+    bottom: -6.6rem;
+    right: 0.8rem;
+  }
+
 }
 
 @media (max-width: 580px) {
@@ -264,6 +368,36 @@ header {
   .bg-decoration-left,
   .bg-decoration-right {
     display: none;
+  }
+
+  .presentation {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4.6rem;
+  }
+  
+  .presentation > img {
+    margin-right: 0rem;
+    margin-bottom: -3.3rem;
+  }
+  
+  .presentation div {
+    padding: 2rem;
+    gap: 1.2rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .presentation div h1 {
+    font-size: 2rem;
+  }
+  
+  .bg-decoration-presentation {
+    display: none;
+  }
+
+  footer {
+    margin-bottom: 3.9rem;
   }
 }
 
